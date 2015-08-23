@@ -13,7 +13,9 @@
         "altorouter/altorouter": "1.1.0",
         "respect/validation": "^0.9.3",
         "duncan3dc/blade": "2.2.*",
-        "robmorgan/phinx": "^0.4.4"
+        "robmorgan/phinx": "^0.4.4",
+        "symfony/var-dumper": "^2.7",
+        "cocur/slugify": "^1.2"
     },
     "autoload": {
       "psr-4": { "Acme\\": "src/" }
