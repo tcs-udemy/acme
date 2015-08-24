@@ -11,6 +11,26 @@ $router->map('POST', '/login', 'Acme\Controllers\AuthenticationController@postSh
 $router->map('GET', '/logout', 'Acme\Controllers\AuthenticationController@getLogout', 'logout');
 $router->map('GET', '/testuser', 'Acme\Controllers\AuthenticationController@getTestUser', 'testuser');
 
+$router->map('GET', '/testemail', function(){
+
+    $transport = Swift_SmtpTransport::newInstance(getenv('SMTP_HOST'), getenv('SMTP_PORT'))
+        ->setUsername(getenv('SMTP_USER'))
+        ->setPassword(getenv('SMTP_PASS'));
+
+    $mailer = Swift_Mailer::newInstance($transport);
+
+    $message = Swift_Message::newInstance()
+        ->setSubject('Your subject')
+        ->setFrom(array('john@doe.com' => 'John Doe'))
+        ->setTo(array('receiver@domain.org'))
+        ->setBody('Here is the message itself');
+
+    $result = $mailer->send($message);
+
+    echo "Sent mail!";
+
+});
+
 // page routes
 $router->map('GET', '/', 'Acme\Controllers\PageController@getShowHomePage', 'home');
 $router->map('GET', '/page-not-found', 'Acme\Controllers\PageController@getShow404', '404');
