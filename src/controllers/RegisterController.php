@@ -4,6 +4,7 @@ namespace Acme\controllers;
 use Acme\Models\User;
 use Acme\Validation\Validator;
 use duncan3dc\Laravel\BladeInstance;
+use Acme\Email\SendEmail;
 
 class RegisterController extends BaseController
 {
@@ -50,6 +51,10 @@ class RegisterController extends BaseController
         $user->email = $_REQUEST['email'];
         $user->password = password_hash($_REQUEST['password'], PASSWORD_DEFAULT);
         $user->save();
+
+        $message = $this->blade->render('emails.welcome-email');
+        
+        SendEmail::sendEmail($user->email, "Welcome to Acme", $message);
 
         header("Location: /success");
         exit();

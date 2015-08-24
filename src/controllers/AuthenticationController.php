@@ -54,9 +54,4 @@ class AuthenticationController extends BaseController
         exit();
     }
 
-    public function getTestUser()
-    {
-        dd(LoggedIn::user()->first_name);
-    }
-
 }
