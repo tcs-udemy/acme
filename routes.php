@@ -6,8 +6,12 @@ $router->map('POST', '/register', 'Acme\Controllers\RegisterController@postShowR
 $router->map('GET', '/verify-account', 'Acme\Controllers\RegisterController@getVerifyAccount', 'verify_account');
 
 // testimonial routes
-$router->map('GET', '/add-testimonial', 'Acme\Controllers\TestimonialController@getShowAdd', 'add_testimonial');
-$router->map('POST', '/add-testimonial', 'Acme\Controllers\TestimonialController@postShowAdd', 'add_testimonial_post');
+
+// logged in user routes
+if (Acme\Auth\LoggedIn::user()) {
+    $router->map('GET', '/add-testimonial', 'Acme\Controllers\TestimonialController@getShowAdd', 'add_testimonial');
+    $router->map('POST', '/add-testimonial', 'Acme\Controllers\TestimonialController@postShowAdd', 'add_testimonial_post');
+}
 
 // login/logout routes
 $router->map('GET', '/login', 'Acme\Controllers\AuthenticationController@getShowLoginPage', 'login');
