@@ -33,6 +33,10 @@ class AuthenticationController extends BaseController
             $okay = false;
         }
 
+        if ($user->active == 0){
+            $okay = false;
+        }
+
         if ($okay) {
             $_SESSION['user'] = $user;
             header("Location: /");
