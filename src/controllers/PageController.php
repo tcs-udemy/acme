@@ -7,11 +7,19 @@ use Acme\models\Page;
 class PageController extends BaseController
 {
 
+    /**
+     * Show the home page
+     * @return html
+     */
     public function getShowHomePage()
     {
         echo $this->blade->render("home");
     }
 
+    /**
+     * Show a generic page from db
+     * @return html
+     */
     public function getShowPage()
     {
         $browser_title = "";
@@ -45,6 +53,10 @@ class PageController extends BaseController
         ]);
     }
 
+    /**
+     * Show the page not found page
+     * @return [type] [description]
+     */
     public function getShow404()
     {
         header("HTTP/1.0 404 Not Found");
