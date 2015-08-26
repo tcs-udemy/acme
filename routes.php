@@ -19,6 +19,13 @@ $router->map('GET', '/login', 'Acme\Controllers\AuthenticationController@getShow
 $router->map('POST', '/login', 'Acme\Controllers\AuthenticationController@postShowLoginPage', 'login_post');
 $router->map('GET', '/logout', 'Acme\Controllers\AuthenticationController@getLogout', 'logout');
 
+// admin routes
+if ((Acme\Auth\LoggedIn::user()) && (Acme\Auth\LoggedIn::user()->access_level == 2)) {
+    $router->map('GET', '/admin', function(){
+        echo "You are an admin!";
+    });
+}
+
 // page routes
 $router->map('GET', '/', 'Acme\Controllers\PageController@getShowHomePage', 'home');
 $router->map('GET', '/page-not-found', 'Acme\Controllers\PageController@getShow404', '404');

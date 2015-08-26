@@ -20,7 +20,7 @@
         @endif
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          @if(Acme\auth\LoggedIn::user())
+          @if ((Acme\Auth\LoggedIn::user()) && (Acme\Auth\LoggedIn::user()->access_level == 2)) {
           <li class="dropdown">
             <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               Admin
@@ -37,6 +37,12 @@
                     <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Logout
                 </a>
             </li>
+          @elseif (Acme\Auth\LoggedIn::user())
+              <li>
+                  <a href="/logout">
+                      <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Logout
+                  </a>
+              </li>
           @else
             <li>
                 <a href="/login">
