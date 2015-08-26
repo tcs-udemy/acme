@@ -17,6 +17,7 @@
         </article>
         <input type="hidden" name="thedata" id="thedata">
         <input type="hidden" name="old" id="old">
+        <input type="hidden" name="page_id" value="{!! $page_id !!}">
     </form>
     @else
         {!! $page_content !!}
