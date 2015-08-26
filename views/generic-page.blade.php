@@ -14,6 +14,10 @@
             <a class="btn btn-primary" href="#!" onclick="saveEditedPage()">Save</a>
             <a class="btn btn-info" href="#!" onclick="turnOffEditing()">Cancel</a>
             &nbsp;&nbsp;&nbsp;
+            @if($page_id == 0)
+            <br><br>
+            <input type="text" name="browser_title" placeholder="Enter browser title">
+            @endif
         </article>
         <input type="hidden" name="thedata" id="thedata">
         <input type="hidden" name="old" id="old">

@@ -29,7 +29,7 @@
             <ul class="dropdown-menu" aria-labelledby="drop1">
               <li><a class="menu-item" href="#" onclick="makePageEditable(this)">Edit Page</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="/admin/page/add">Add a page</a></li>
             </ul>
           </li>
             <li>

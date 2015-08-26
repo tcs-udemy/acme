@@ -51,14 +51,17 @@ function saveEditedPage() {
     $("#thedata").val(pagedata);
     var options = { success: showResponse };
     $("#editpage").unbind('submit').ajaxSubmit(options);
-    $("#old").val('');
-    turnOffEditing();
     return false;
 }
 
-function showResponse()
+function showResponse(responseText, statusText, xhr, $form)
 {
-    alert("Called save");
+    if (responseText == 'OK'){
+        $("#old").val('');
+        turnOffEditing();
+    } else {
+        alert(responseText);
+    }
 }
 </script>
 @endif
