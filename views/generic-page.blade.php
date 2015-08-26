@@ -26,6 +26,9 @@
 @section('bottomjs')
 <script>
     @if ((Acme\Auth\LoggedIn::user()) && (Acme\Auth\LoggedIn::user()->access_level == 2))
+
+    var editor;
+
     function makePageEditable(item){
         if ($(".editablecontent").length != 0) {
             $(".admin-hidden").addClass('admin-display').removeClass('admin-hidden');
@@ -48,8 +51,6 @@
             CKEDITOR.on( 'instanceLoaded', function(event) {
                     editor = event.editor;
             });
-
-
         } else {
             alert ('No editable content on page!');
         }
@@ -68,6 +69,23 @@
         if ($('#old').val() != ''){
             $(".editablecontent").html($("#old").val());
         }
+    }
+
+    function saveEditedPage() {
+        // get the data from ckeditor
+        var pagedata = editor.getData();
+        // save this data
+        $("#thedata").val(pagedata);
+        var options = { success: showResponse };
+        $("#editpage").unbind('submit').ajaxSubmit(options);
+        $("#old").val('');
+        turnOffEditing();
+        return false;
+    }
+
+    function showResponse()
+    {
+        alert("Called save");
     }
     @endif
 </script>
