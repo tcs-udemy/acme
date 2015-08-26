@@ -33,6 +33,7 @@
 
   </div>
 
+<footer class="footer">
   <div class="row footer-background">
       <div class="col-md-3 margin-left-5px">
           <div class="padding-left-8px">
@@ -49,6 +50,7 @@
           <img src="/assets/map-small.png" class="pull-right">
       </div>
   </div>
+</footer>
 
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
