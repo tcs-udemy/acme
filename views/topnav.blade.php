@@ -20,14 +20,14 @@
         @endif
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          @if ((Acme\Auth\LoggedIn::user()) && (Acme\Auth\LoggedIn::user()->access_level == 2)) {
+          @if ((Acme\Auth\LoggedIn::user()) && (Acme\Auth\LoggedIn::user()->access_level == 2))
           <li class="dropdown">
             <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               Admin
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" aria-labelledby="drop1">
-              <li><a href="#">Edit Page</a></li>
+              <li><a class="menu-item" href="#" onclick="makePageEditable(this)">Edit Page</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="#">Separated link</a></li>
             </ul>

@@ -31,3 +31,14 @@ body {
   height: 136px;
   background-color: #f5f5f5;
 }
+
+/* admin classes */
+.admin-hidden {
+    display: none;
+}
+.admin-display {
+    display:inline-block;
+}
+.outlined {
+    border: 1px solid red;
+}
