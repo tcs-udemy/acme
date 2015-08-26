@@ -8,6 +8,10 @@ use Acme\Validation\Validator;
 class AdminController extends BaseController
 {
 
+    /**
+     * Saved edited page; called via ajax
+     * @return string
+     */
     public function postSavePage()
     {
         $page_id = $_REQUEST['page_id'];

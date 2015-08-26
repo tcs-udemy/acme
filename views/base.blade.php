@@ -62,6 +62,7 @@
   @endif
 
   @yield('bottomjs')
+  @include('admin.admin-js')
 
 </body>
 
