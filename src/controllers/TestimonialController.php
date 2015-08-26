@@ -8,6 +8,16 @@ use Acme\Auth\LoggedIn;
 
 class TestimonialController extends BaseController
 {
+
+    public function getShowTestimonials()
+    {
+        $testimonials = Testimonial::all();
+
+        echo $this->blade->render('testimonials', [
+            'testimonials' => $testimonials,
+        ]);
+    }
+
     public function getShowAdd()
     {
         echo $this->blade->render('add-testimonial');

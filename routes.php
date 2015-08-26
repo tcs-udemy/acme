@@ -6,6 +6,7 @@ $router->map('POST', '/register', 'Acme\Controllers\RegisterController@postShowR
 $router->map('GET', '/verify-account', 'Acme\Controllers\RegisterController@getVerifyAccount', 'verify_account');
 
 // testimonial routes
+$router->map('GET', '/testimonials', 'Acme\Controllers\TestimonialController@getShowTestimonials', 'testimonials');
 
 // logged in user routes
 if (Acme\Auth\LoggedIn::user()) {
