@@ -29,7 +29,11 @@
           @include('errormessage')
       </div>
 
-  @yield('content')
+      <div class="row">
+          <div class="col-md-12 push-down">
+              @yield('content')
+          </div>
+      </div>
 
   </div>
 
