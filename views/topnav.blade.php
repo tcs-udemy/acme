@@ -12,7 +12,7 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/about-acme">About</a></li>
         <li><a href="/register">Register</a></li>
         <li><a href="/testimonials">Testimonials</a></li>
         @if(Acme\auth\LoggedIn::user())
