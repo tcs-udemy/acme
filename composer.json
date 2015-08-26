@@ -16,7 +16,8 @@
         "robmorgan/phinx": "^0.4.4",
         "symfony/var-dumper": "^2.7",
         "cocur/slugify": "^1.2",
-        "swiftmailer/swiftmailer": "^5.4"
+        "swiftmailer/swiftmailer": "^5.4",
+        "phpunit/phpunit": "^4.8"
     },
     "autoload": {
       "psr-4": { "Acme\\": "src/" }
