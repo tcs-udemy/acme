@@ -1,10 +1,10 @@
 <?php
 namespace Acme\controllers;
 
-use Acme\Models\User;
+use Acme\models\User;
 use Acme\Validation\Validator;
 use duncan3dc\Laravel\BladeInstance;
-use Acme\Auth\LoggedIn;
+use Acme\auth\LoggedIn;
 
 class AuthenticationController extends BaseController
 {

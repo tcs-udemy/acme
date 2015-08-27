@@ -4,7 +4,7 @@ namespace Acme\controllers;
 use duncan3dc\Laravel\BladeInstance;
 use Acme\models\Testimonial;
 use Acme\Validation\Validator;
-use Acme\Auth\LoggedIn;
+use Acme\auth\LoggedIn;
 
 class TestimonialController extends BaseController
 {
