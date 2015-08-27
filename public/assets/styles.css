@@ -15,6 +15,9 @@
     color: #FF0000;
 }
 
+.push-down {
+    margin-top: 20px;
+}
 html {
   position: relative;
   min-height: 100%;
@@ -30,4 +33,15 @@ body {
   /* Set the fixed height of the footer here */
   height: 136px;
   background-color: #f5f5f5;
+}
+
+/* admin classes */
+.admin-hidden {
+    display: none;
+}
+.admin-display {
+    display:inline-block;
+}
+.outlined {
+    border: 1px solid red;
 }

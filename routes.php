@@ -19,6 +19,12 @@ $router->map('GET', '/login', 'Acme\Controllers\AuthenticationController@getShow
 $router->map('POST', '/login', 'Acme\Controllers\AuthenticationController@postShowLoginPage', 'login_post');
 $router->map('GET', '/logout', 'Acme\Controllers\AuthenticationController@getLogout', 'logout');
 
+// admin routes
+if ((Acme\Auth\LoggedIn::user()) && (Acme\Auth\LoggedIn::user()->access_level == 2)) {
+    $router->map('POST', '/admin/page/edit', 'Acme\Controllers\AdminController@postSavePage', 'save_page');
+    $router->map('GET', '/admin/page/add', 'Acme\Controllers\AdminController@getAddPage', 'add_page');
+}
+
 // page routes
 $router->map('GET', '/', 'Acme\Controllers\PageController@getShowHomePage', 'home');
 $router->map('GET', '/page-not-found', 'Acme\Controllers\PageController@getShow404', '404');

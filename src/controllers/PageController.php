@@ -7,15 +7,24 @@ use Acme\models\Page;
 class PageController extends BaseController
 {
 
+    /**
+     * Show the home page
+     * @return html
+     */
     public function getShowHomePage()
     {
         echo $this->blade->render("home");
     }
 
+    /**
+     * Show a generic page from db
+     * @return html
+     */
     public function getShowPage()
     {
         $browser_title = "";
         $page_content = "";
+        $page_id = 0;
 
         // extract page name from the url
         $uri = explode("/", $_SERVER['REQUEST_URI']);
@@ -28,6 +37,7 @@ class PageController extends BaseController
         foreach ($page as $item) {
             $browser_title = $item->browser_title;
             $page_content = $item->page_content;
+            $page_id = $item->id;
         }
 
         if (strlen($browser_title) == 0) {
@@ -39,9 +49,14 @@ class PageController extends BaseController
         echo $this->blade->render('generic-page', [
             'browser_title' => $browser_title,
             'page_content' => $page_content,
+            'page_id' => $page_id,
         ]);
     }
 
+    /**
+     * Show the page not found page
+     * @return [type] [description]
+     */
     public function getShow404()
     {
         header("HTTP/1.0 404 Not Found");
