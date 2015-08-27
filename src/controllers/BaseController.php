@@ -13,7 +13,7 @@ class BaseController
     public function __construct()
     {
         $this->signer = new SignatureGenerator(getenv('CSRF_SECRET'));
-        $this->blade = new BladeInstance("/vagrant/views", "/vagrant/cache/views");
+        $this->blade = new BladeInstance(getenv('VIEWS_DIRECTORY'), getenv('CACHE_DIRECTORY'));
     }
 
 }
