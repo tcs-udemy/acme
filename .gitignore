@@ -6,3 +6,4 @@ vendor/
 .vagrant/
 .env
 phinx.yml
+Vagrantfile
